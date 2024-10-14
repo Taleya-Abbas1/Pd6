@@ -1,4 +1,4 @@
-#include<iostream>
+9#include<iostream>
 #include<string>
 using namespace std ;
 string checkStatus(int examHour , int examMinutes , int studentHours , int studentMinutes);
@@ -26,34 +26,17 @@ string checkStatus(int examHour , int examMinutes , int studentHours , int stude
   int studentArrivalMins;
   studentArrivalMins = (studentHours * 60) + studentMinutes ;
   int minsDifference ;
-  int minDifference ;
   minsDifference = studentArrivalMins  - examStartingMins ;
-  minDifference = examStartingMins - studentArrivalMins  ; 
   int hours , mins;
-   if( examHour < studentHours)
+  hours = minsDifference%24 ;
+  mins = minsDifference%60 ;
+  
+   if( minsDifference < 60)
    {
-     if(minsDifference < 60)
-     {
-      return "late !  " +to_string(minsDifference)+ "  minutes after the start" ;
-     }
-    if( minsDifference >= 60)
-    {
-     hours = minsDifference/60 ;
-     mins = minsDifference%60 ;
-    return "late ! "  +to_string(hours)+ " : " +to_string(mins)+ "  hours after the start" ;
+    return "late !  " +to_string(minsDifference)+ " minutes after the start" ;
    }
-  } 
-  if(examHour > studentHours)
+   if( minsDifference >= 60)
    {
-    if( minDifference < 60)
-   {
-     return "on time !  " +to_string(minDifference)+ "  minutes before the start" ;
-   }
-   if( minDifference >=60 )
-   {
-     hours = minDifference/60 ;
-     mins = minDifference%60 ;
-     return "Early ! "   +to_string(hours)+ " : " +to_string(mins)+ "  hours before the start" ;
-   }
-  }
+    return "late ! "  +to_string(hours)+ " : " +to_string(mins)+ "hours after the start" ;
+   } 
 }
