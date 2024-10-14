@@ -4,7 +4,7 @@ using namespace std;
 string decideActivity(string temperature , string humidity );
 main()
 {
-  string temperature , humidity ;
+  string temperature , humidity; 
   cout<<"Enter temperature (warm or cold):" ;
   cin>>temperature ;
   cout<<"Enter the humidity :" ;
